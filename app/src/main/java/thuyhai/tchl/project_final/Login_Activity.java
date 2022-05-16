@@ -18,7 +18,7 @@ public class Login_Activity extends AppCompatActivity {
 
      TabLayout tabLayout;
      ViewPager viewPager;
-    Login_Adapter adapter;
+     Login_Adapter adapter;
      FloatingActionButton fb, gg,gm;
     private float v=0;
     @Override
@@ -36,8 +36,8 @@ public class Login_Activity extends AppCompatActivity {
 
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("Log in"));
-        tabLayout.addTab(tabLayout.newTab().setText("Sing Up"));
+        tabLayout.addTab(tabLayout.newTab().setText("LogIn"));
+        tabLayout.addTab(tabLayout.newTab().setText("SingUp"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 

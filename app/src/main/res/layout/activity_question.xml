@@ -38,22 +38,26 @@
             android:background="@drawable/white_bg"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Enter your question"
-                android:minWidth="200dp"
-                android:gravity="left"
-                android:textColor="@color/color_desire_font_text"
-                android:textSize="20dp"
-                android:id="@+id/insert"/>
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:gravity="center"
+                android:minWidth="280dp"
+
                 android:textSize="18dp"
-                android:hint="..."/>
+                android:hint="Enter the question here"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_send_24"
+                android:background="@drawable/white_bg"
+                />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

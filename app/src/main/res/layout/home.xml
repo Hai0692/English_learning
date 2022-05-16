@@ -11,6 +11,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -32,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik"
                 android:gravity="center"
-                android:text="Learning by topic"
+                android:text="Upgrade by level"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -53,14 +55,21 @@
             android:scaleType="centerCrop"
             android:src="@drawable/datetime" />
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center"
         android:layout_marginTop="10dp"
-        android:padding="0dp"
-        />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_Pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linear_level"
         android:layout_width="match_parent"
@@ -68,50 +77,69 @@
         android:layout_margin="10dp"
         android:orientation="horizontal">
         <androidx.cardview.widget.CardView
+            android:id="@+id/Level1"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="15dp"
             android:layout_marginStart="15dp"
-            app:cardBackgroundColor="#8886E3">
+            app:cardBackgroundColor="#F18563">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_amp_stories_24"/>
             <TextView
                 android:text="Basic \nLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_desire_font"
-                android:textSize="25dp"
-                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
                 android:textStyle="bold"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_marginStart="15dp"
-            app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#8886E3">
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="#8BC34A">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_dashboard_24"/>
             <TextView
-                android:text="Average \nLevel"
+                android:text="Average\n   Level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_desire_font"
-                android:textSize="25dp"
-                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
                 android:textStyle="bold"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="110dp"
             android:layout_height="110dp"
-
-            android:layout_marginStart="15dp"
-            app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#8886E3">
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="#E3D87B">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_align_horizontal_right_24"/>
             <TextView
-                android:text="High \nLevel"
+                android:text="High\nLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_desire_font"
-                android:textSize="25dp"
-                android:layout_gravity="center"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
+                android:textStyle="bold"
+             />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

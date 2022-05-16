@@ -19,42 +19,36 @@ import thuyhai.tchl.project_final.R;
 
 
 public class Login_Tab_Fragment extends Fragment {
-    private EditText email,pass;
-    private TextView foget;
-    private Button login;
+    private EditText edtEmail,edtPass;
+    private TextView tvForget;
+    private Button btnLogin;
     private float v=0;
     private Context mContext;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_fragment, container, false);
-        email = root.findViewById(R.id.email);
-        pass = root.findViewById(R.id.password);
-        foget = root.findViewById(R.id.foget);
-        login = root.findViewById(R.id.btnLogin);
-//
-//        Typeface roboto = Typeface.createFromAsset(mContext.getAssets(), "font/Roboto-Bold.ttf");
-//        email.setTypeface(roboto);
-//        pass.setTypeface(roboto);
-//        foget.setTypeface(roboto);
-//        login.setTypeface(roboto);
-//
+        edtEmail = root.findViewById(R.id.email);
+        edtPass = root.findViewById(R.id.password);
+        tvForget = root.findViewById(R.id.foget);
+        btnLogin = root.findViewById(R.id.btnLogin);
+
+        edtEmail.setTranslationX(800);
+        edtPass.setTranslationX(800);
+        tvForget.setTranslationX(800);
+        btnLogin.setTranslationX(800);
+
+        edtEmail.setAlpha(v);
+        edtPass.setAlpha(v);
+        tvForget.setAlpha(v);
+        btnLogin.setAlpha(v);
+
+        edtEmail.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
+        edtPass.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
+        tvForget.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
+        btnLogin.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(700).start();
 
 
-        email.setTranslationX(800);
-        pass.setTranslationX(800);
-        foget.setTranslationX(800);
-        login.setTranslationX(800);
-
-        email.setAlpha(v);
-        pass.setAlpha(v);
-        foget.setAlpha(v);
-        login.setAlpha(v);
-
-        email.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
-        pass.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
-        foget.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
-        login.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(700).start();
 
 
 

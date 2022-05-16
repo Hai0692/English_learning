@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import thuyhai.tchl.project_final.adapter.Vocabulary_Adapter;
+import thuyhai.tchl.project_final.models.Kind_Model;
 import thuyhai.tchl.project_final.models.Theme_Model;
 import thuyhai.tchl.project_final.models.Vocabulary_Model;
 
@@ -37,14 +38,13 @@ public class List_Vocabulary_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_list_vocabulary);
 
 
-        // intent
         topic = findViewById(R.id.topic);
-        Bundle bundle = getIntent().getExtras();
-        if(bundle == null){
+        Bundle bundle1 = getIntent().getExtras();
+        if(bundle1 == null){
             return;
         }
-        Theme_Model modelTheme = (Theme_Model) bundle.get("object");
-        topic.setText(modelTheme.getTitleTheme());
+        Kind_Model kind_model = (Kind_Model) bundle1.get("object");
+        topic.setText(kind_model.getTitleKind());
 
 
 
