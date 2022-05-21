@@ -8,11 +8,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import thuyhai.tchl.project_final.REST_API.login_client;
+import thuyhai.tchl.project_final.Storage.SharedPrefManager;
 import thuyhai.tchl.project_final.adapter.Login_Adapter;
+import thuyhai.tchl.project_final.models.login_response;
 
 public class Login_Activity extends AppCompatActivity {
 
@@ -21,19 +31,29 @@ public class Login_Activity extends AppCompatActivity {
      Login_Adapter adapter;
      FloatingActionButton fb, gg,gm;
     private float v=0;
+
+
+    private EditText edtEmail,edtPass;
+    private TextView tvForget;
+    private Button btnLogin;
+    private String name_client,email_client;
+    SharedPrefManager sharedPrefManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         Intent intent2 = getIntent();
+        Intent intent1 = getIntent();
+
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.view_pager);
         fb = findViewById(R.id.fab_facebook);
         gg = findViewById(R.id.fab_google);
         gm = findViewById(R.id.fab_gmail);
-
 
 
         tabLayout.addTab(tabLayout.newTab().setText("LogIn"));
@@ -61,5 +81,9 @@ public class Login_Activity extends AppCompatActivity {
         gm.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(800).start();
 
         tabLayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
+
+
     }
+
+
 }

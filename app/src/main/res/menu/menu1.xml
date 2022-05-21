@@ -20,7 +20,7 @@
             <item android:id="@+id/navi_pass"
                 android:title="@string/nav_change_pass"
                 android:icon="@drawable/ic_lock_24"/>
-            <item android:id="@+id/logout"
+            <item android:id="@+id/navi_logout"
                 android:title="@string/nav_logout"
                 android:icon="@drawable/ic_baseline_login_24"/>
         </menu>

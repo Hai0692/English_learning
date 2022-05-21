@@ -13,14 +13,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+import thuyhai.tchl.project_final.Storage.SharedPrefManager;
 import thuyhai.tchl.project_final.fragment.History;
 import thuyhai.tchl.project_final.fragment.Home;
 import thuyhai.tchl.project_final.fragment.Favorite;
+import thuyhai.tchl.project_final.fragment.Login_Tab_Fragment;
 import thuyhai.tchl.project_final.fragment.Profile;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,18 +34,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static  final int FRAGMENT_HISTORY = 1;
     private static  final int FRAGMENT_FAVORITE = 2;
     private static  final int FRAGMENT_PROFILE = 3;
+    private static final int FRAGMENT_LOGOUT = 4;
 
+    private TextView tvUserName, tvEmail;
     private int mCurrentFragment =FRAGMENT_HOME;
-
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.Navigation_view);
+        View hView = navigationView.getHeaderView(0);
+        tvUserName = (TextView)hView.findViewById(R.id.tvUserName);
+       tvEmail =  (TextView)hView.findViewById(R.id.tvEmail);
+
+
         Intent intent1 = getIntent();
-
-
         // fragment
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
@@ -51,11 +61,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.Navigation_view);
+       // NavigationView navigationView = findViewById(R.id.Navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         replaceFragment(new Home());
         navigationView.getMenu().findItem(R.id.navi_home).setChecked(true);
+
+
+
+        sharedPrefManager = new SharedPrefManager(MainActivity.this);
+
+        String username = sharedPrefManager.getUser().getName();
+        tvUserName.setText(username);
+
+        String email = sharedPrefManager.getUser().getEmail();
+        tvEmail.setText(email);
+
 
 
     }
@@ -97,6 +118,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mCurrentFragment = FRAGMENT_PROFILE;
             }
         }
+        else  if (id == R.id.navi_logout){
+                sharedPrefManager = new SharedPrefManager(getApplicationContext());
+                sharedPrefManager.logout();
+                Intent intent1 = new Intent(MainActivity.this, Login_Activity.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent1);
+        }
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -127,4 +155,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         return super.onCreateOptionsMenu(menu);
     }
+
+
 }

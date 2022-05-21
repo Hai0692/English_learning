@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0"
-        android:inputType="textPassword"
+        android:inputType="phone"
         app:layout_constraintWidth_percent=".8" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -97,6 +97,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".9"
         app:layout_constraintWidth_percent=".8" />
+    <TextView
+        android:id="@+id/txtSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="success"
+        android:textSize="20dp"
+        android:textColor="@color/color_desire_font"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingUp"
+        android:visibility="invisible"
+        android:gravity="center"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

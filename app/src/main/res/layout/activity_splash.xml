@@ -7,15 +7,7 @@
     android:background="#FAFAFA"
     tools:context=".Splash_Activity">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/ImgSplash"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="437dp"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginTop="88dp"-->
-<!--        android:src="@drawable/logo"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
@@ -34,7 +26,9 @@
         android:text="KOLA LEARNING"
         android:textSize="30dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/rubik_bold"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textColor="@color/color_desire_font"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/animationView"/>
