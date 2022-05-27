@@ -6,23 +6,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import thuyhai.tchl.project_final.REST_API.login_client;
 import thuyhai.tchl.project_final.Storage.SharedPrefManager;
 import thuyhai.tchl.project_final.adapter.Login_Adapter;
-import thuyhai.tchl.project_final.models.login_response;
 
 public class Login_Activity extends AppCompatActivity {
 

@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import thuyhai.tchl.project_final.R;
-import thuyhai.tchl.project_final.REST_API.RegisterClient;
+import thuyhai.tchl.project_final.REST_API.Retrofit_Client;
 import thuyhai.tchl.project_final.models.register_response;
 
 public class Singup_Tab_Fragment extends Fragment {
@@ -78,7 +78,7 @@ public class Singup_Tab_Fragment extends Fragment {
 
         }
 
-        Call<register_response> call = RegisterClient.getInstance().getApi().register(name,email,phone,password);
+        Call<register_response> call = Retrofit_Client.getInstance().getApi().register(name,email,phone,password);
         call.enqueue(new Callback<register_response>() {
             @Override
             public void onResponse(Call<register_response> call, Response<register_response> response) {

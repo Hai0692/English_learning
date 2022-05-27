@@ -29,10 +29,21 @@ public class Kind_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kind);
 
+
+        imgback_home = findViewById(R.id.imgback_home);
+        imgback_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_back_home = new Intent(Kind_Activity.this, MainActivity.class );
+                intent_back_home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent_back_home);
+            }
+        });
+
+
+
         rcvKind = findViewById(R.id.recyclerKind);
-
         kind_models = new ArrayList<>();
-
         kind_models.add(new Kind_Model(R.drawable.theme1,"Family"));
         kind_models.add(new Kind_Model(R.drawable.theme2,"Family"));
         kind_models.add(new Kind_Model(R.drawable.theme3,"Family"));

@@ -5,15 +5,15 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegisterClient {
-    private static String BASE_URL = "http://192.168.0.106/App-E/public/api/";
-    private static RegisterClient retrofitClient;
+public class Retrofit_Client {
+    private static String BASE_URL = "http://192.168.1.21/App-E/public/api/";
+    private static Retrofit_Client retrofitClient;
     private static Retrofit retrofit;
     private OkHttpClient.Builder builder = new OkHttpClient.Builder();
     private HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
 
 
-    private RegisterClient() {
+    private Retrofit_Client() {
 
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         builder.addInterceptor(interceptor);
@@ -24,9 +24,9 @@ public class RegisterClient {
                 .build();
     }
 
-    public static synchronized RegisterClient getInstance() {
+    public static synchronized Retrofit_Client getInstance() {
         if (retrofitClient == null) {
-            retrofitClient = new RegisterClient();
+            retrofitClient = new Retrofit_Client();
         }
         return retrofitClient;
     }

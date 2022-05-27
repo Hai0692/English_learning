@@ -1,9 +1,15 @@
 package thuyhai.tchl.project_final.REST_API;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import thuyhai.tchl.project_final.models.kind_response;
+import thuyhai.tchl.project_final.models.level_response;
 import thuyhai.tchl.project_final.models.login_response;
 import thuyhai.tchl.project_final.models.register_response;
 
@@ -18,11 +24,13 @@ public interface API_interface {
 
     @FormUrlEncoded
     @POST("login")
-    Call<login_response> Login(@Field("email") String email,
+    Call<login_response> login(@Field("email") String email,
                                @Field("password") String password);
-//
-//    @POST("profile")
-//    Call<profile_response> Profile();
-//
+    @GET("level")
+    Call<List<level_response>> level();
+
+    @GET("level/{id}")
+    Call<List<kind_response>> showLevel(@Path("id") String id);
+
 
 }

@@ -1,8 +1,6 @@
 package thuyhai.tchl.project_final.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import thuyhai.tchl.project_final.MainActivity;
 import thuyhai.tchl.project_final.R;
-import thuyhai.tchl.project_final.REST_API.login_client;
+import thuyhai.tchl.project_final.REST_API.Retrofit_Client;
 import thuyhai.tchl.project_final.Storage.SharedPrefManager;
 import thuyhai.tchl.project_final.models.login_response;
 
@@ -92,7 +90,7 @@ public class Login_Tab_Fragment extends Fragment {
                 return;
             }
 
-            Call<login_response> call =  login_client.getInstance().getApi().Login(email,password);
+            Call<login_response> call =  Retrofit_Client.getInstance().getApi().login(email,password);
             call.enqueue(new Callback<login_response>() {
                 @Override
                 public void onResponse(Call<login_response> call, Response<login_response> response) {

@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class List_Vocabulary_Activity extends AppCompatActivity {
     private Context context;
     private TextView topic;
     private SearchView searchView;
+    private ImageView imgBack;
 
 
 
@@ -45,6 +47,18 @@ public class List_Vocabulary_Activity extends AppCompatActivity {
         }
         Kind_Model kind_model = (Kind_Model) bundle1.get("object");
         topic.setText(kind_model.getTitleKind());
+
+
+
+        imgBack = findViewById(R.id.imgback_kind);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_back = new Intent(List_Vocabulary_Activity.this, Kind_Activity.class );
+                intent_back.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent_back);
+            }
+        });
 
 
 

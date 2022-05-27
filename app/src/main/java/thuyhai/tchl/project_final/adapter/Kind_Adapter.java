@@ -43,7 +43,7 @@ public class Kind_Adapter extends RecyclerView.Adapter<Kind_Adapter.KindViewHold
     public void onBindViewHolder(@NonNull KindViewHolder holder, int position) {
 
         final Kind_Model kind_model = kind_models.get(position);
-        holder.txtKind.setText(kind_model.getTitleKind());
+        holder.tvKind.setText(kind_model.getTitleKind());
         holder.imgKind.setImageResource(kind_model.getImgKind());
 
 
@@ -69,13 +69,20 @@ public class Kind_Adapter extends RecyclerView.Adapter<Kind_Adapter.KindViewHold
 
         private LinearLayout layout_item;
         private ImageView imgKind;
-        private TextView txtKind;
+        private TextView tvKind;
         public KindViewHolder(@NonNull View itemView) {
             super(itemView);
             imgKind = itemView.findViewById(R.id.imgKind);
-            txtKind = itemView.findViewById(R.id.txtKind);
+            tvKind = itemView.findViewById(R.id.txtKind);
             layout_item = itemView.findViewById(R.id.kind_item);
 
         }
+
+//        public void setDataKind(String name_kind){
+//            tvKind.setText(name_kind);
+//        }
     }
+
+
+
 }

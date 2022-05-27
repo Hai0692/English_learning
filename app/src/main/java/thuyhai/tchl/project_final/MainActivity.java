@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         Intent intent1 = getIntent();
+
+        Intent intent_back_home = getIntent();
+
         // fragment
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
