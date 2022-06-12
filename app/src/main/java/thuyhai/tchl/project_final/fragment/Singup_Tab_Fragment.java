@@ -82,7 +82,6 @@ public class Singup_Tab_Fragment extends Fragment {
         call.enqueue(new Callback<register_response>() {
             @Override
             public void onResponse(Call<register_response> call, Response<register_response> response) {
-
                 if(response.isSuccessful()){
 
                     edtName.setText("");
@@ -92,8 +91,6 @@ public class Singup_Tab_Fragment extends Fragment {
                     tvResult.setText("register success");
                     tvResult.setVisibility(View.VISIBLE);
 
-
-
                 }
                 else {
                     tvResult.setText("This account already exists");
@@ -101,7 +98,6 @@ public class Singup_Tab_Fragment extends Fragment {
                 }
             }
             @Override
-
             public void onFailure(Call<register_response> call, Throwable t) {
 
             }

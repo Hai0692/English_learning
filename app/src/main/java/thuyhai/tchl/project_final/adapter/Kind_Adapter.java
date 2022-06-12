@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,17 +16,16 @@ import java.util.List;
 
 import thuyhai.tchl.project_final.List_Vocabulary_Activity;
 import thuyhai.tchl.project_final.R;
-import thuyhai.tchl.project_final.models.Kind_Model;
+import thuyhai.tchl.project_final.models.kind_response;
 
 public class Kind_Adapter extends RecyclerView.Adapter<Kind_Adapter.KindViewHolder> {
 
 
-    private List<Kind_Model> kind_models;
+    private List<kind_response> kind_models;
     private Context mContext;
 
-    public Kind_Adapter(List<Kind_Model> kind_models, Context mContext) {
+    public Kind_Adapter(List<kind_response> kind_models) {
         this.kind_models = kind_models;
-        this.mContext = mContext;
     }
 
     @NonNull
@@ -42,22 +40,23 @@ public class Kind_Adapter extends RecyclerView.Adapter<Kind_Adapter.KindViewHold
     @Override
     public void onBindViewHolder(@NonNull KindViewHolder holder, int position) {
 
-        final Kind_Model kind_model = kind_models.get(position);
-        holder.tvKind.setText(kind_model.getTitleKind());
-        holder.imgKind.setImageResource(kind_model.getImgKind());
+       final   String name_kind = kind_models.get(position).getKind_name();
+        holder.tvKind.setText(name_kind);
 
-
+        final  int kind_id = kind_models.get(position).getId();
         holder.layout_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent_vocabulary = new Intent(v.getContext(), List_Vocabulary_Activity.class);
-                Bundle bundle1 = new Bundle();
-                bundle1.putSerializable("object", kind_model);
-                intent_vocabulary.putExtras(bundle1);
+                intent_vocabulary.putExtra("Key_2", name_kind);
+                intent_vocabulary.putExtra("Key_3",kind_id);
                 v.getContext().startActivity(intent_vocabulary);
+
 
             }
         });
+
+
     }
 
     @Override
@@ -66,21 +65,15 @@ public class Kind_Adapter extends RecyclerView.Adapter<Kind_Adapter.KindViewHold
     }
 
     public class KindViewHolder extends RecyclerView.ViewHolder {
-
         private LinearLayout layout_item;
-        private ImageView imgKind;
         private TextView tvKind;
         public KindViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgKind = itemView.findViewById(R.id.imgKind);
             tvKind = itemView.findViewById(R.id.txtKind);
             layout_item = itemView.findViewById(R.id.kind_item);
 
         }
 
-//        public void setDataKind(String name_kind){
-//            tvKind.setText(name_kind);
-//        }
     }
 
 

@@ -40,6 +40,8 @@ public class Login_Activity extends AppCompatActivity {
         Intent intent2 = getIntent();
         Intent intent1 = getIntent();
 
+        Intent intent_login = getIntent();
+
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.view_pager);

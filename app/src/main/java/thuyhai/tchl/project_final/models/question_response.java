@@ -1,37 +1,37 @@
 package thuyhai.tchl.project_final.models;
+import java.io.Serializable;
 
-public class Question_Model {
-    private String questionModel;
-    private String nameModel;
-    private int imageModel;
+public class question_response implements Serializable {
 
-    public Question_Model(String questionModel, String nameModel, int imageModel) {
-        this.questionModel = questionModel;
-        this.nameModel = nameModel;
-        this.imageModel = imageModel;
+    private String name;
+    private String body;
+
+    public question_response(String name, String body) {
+        this.name = name;
+        this.body = body;
     }
 
-    public String getQuestionModel() {
-        return questionModel;
+    public String getName() {
+        return name;
     }
 
-    public String getNameModel() {
-        return nameModel;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getImageModel() {
-        return imageModel;
+    public String getBody() {
+        return body;
     }
 
-    public void setQuestionModel(String questionModel) {
-        this.questionModel = questionModel;
+    public void setBody(String body) {
+        this.body = body;
     }
 
-    public void setNameModel(String nameModel) {
-        this.nameModel = nameModel;
-    }
-
-    public void setImageModel(int imageModel) {
-        this.imageModel = imageModel;
+    @Override
+    public String toString() {
+        return "question_response{" +
+                "name='" + name + '\'' +
+                ", body='" + body + '\'' +
+                '}';
     }
 }

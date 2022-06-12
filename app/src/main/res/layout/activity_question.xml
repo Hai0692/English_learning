@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgback"
+            android:id="@+id/imgbackHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -25,7 +25,7 @@
             android:layout_marginStart="280dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_toEndOf="@id/imgback"
+            android:layout_toEndOf="@id/imgbackHome"
             android:src="@drawable/avatar" />
 
         <LinearLayout
@@ -39,15 +39,16 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/edtCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:gravity="center"
                 android:minWidth="280dp"
-
                 android:textSize="18dp"
                 android:hint="Enter the question here"/>
             <ImageView
+                android:id="@+id/sendQs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,8 +69,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/white_bg"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/white_bg" />
 
     </RelativeLayout>
 </ScrollView>

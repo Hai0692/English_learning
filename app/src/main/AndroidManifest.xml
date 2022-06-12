@@ -18,7 +18,8 @@
             android:exported="false" />
         <activity
             android:name=".Detail_Vocabulary_Activity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
         <activity
             android:name=".List_Vocabulary_Activity"
             android:exported="false" />
@@ -42,7 +43,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.SEARCH"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

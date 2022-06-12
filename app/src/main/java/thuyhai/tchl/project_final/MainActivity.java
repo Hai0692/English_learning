@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent_back_home = getIntent();
 
+
         // fragment
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent1);
         }
+
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }

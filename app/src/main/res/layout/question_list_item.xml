@@ -16,10 +16,11 @@
             android:minWidth="100dp"
             android:layout_gravity="center"
             android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/img_avt"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="53dp"
+                android:layout_height="59dp"
                 android:layout_gravity="center"
                 android:src="@drawable/avatar" />
             <TextView

@@ -23,7 +23,16 @@
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/custome_user.xml" value="0.24583333333333332" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/cut_card_background.xml" value="0.1" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/edittext.xml" value="0.1425925925925926" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_align_horizontal_right_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_amp_stories_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_dashboard_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_filter_vintage_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.21041666666666667" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22666666666666666" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/ic_volume_up_24.xml" value="0.21041666666666667" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/top_btn_bg.xml" value="0.1" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/view_bg.xml" value="0.1" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/drawable/white_bg.xml" value="0.1361111111111111" />
@@ -62,7 +71,7 @@
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/level_list_item.xml" value="0.25" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/login_rab_fragment.xml" value="0.1" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/login_tab_fragment.xml" value="0.25" />
-        <entry key="..\:/Android/Project_Final/app/src/main/res/layout/question_list_item.xml" value="0.1" />
+        <entry key="..\:/Android/Project_Final/app/src/main/res/layout/question_list_item.xml" value="0.2" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/singup_tab_fragment.xml" value="0.2" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/splash.xml" value="0.2359375" />
         <entry key="..\:/Android/Project_Final/app/src/main/res/layout/vocabulary_list_item.xml" value="0.25" />

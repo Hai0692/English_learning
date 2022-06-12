@@ -19,6 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import thuyhai.tchl.project_final.MainActivity;
+import thuyhai.tchl.project_final.Question_Activity;
 import thuyhai.tchl.project_final.R;
 import thuyhai.tchl.project_final.REST_API.Retrofit_Client;
 import thuyhai.tchl.project_final.Storage.SharedPrefManager;
@@ -31,8 +32,7 @@ public class Login_Tab_Fragment extends Fragment {
     private Button btnLogin;
     private float v=0;
     SharedPrefManager sharedPrefManager;
-
-
+    public static String token;
 
 
     @Nullable
@@ -98,12 +98,13 @@ public class Login_Tab_Fragment extends Fragment {
                         login_response loginResponse = response.body();
                         if (loginResponse.getMessage().equals("true") ) {
                             if(sharedPrefManager != null) {
-
                                 sharedPrefManager.SaveUser(loginResponse.getUser());
+                                sharedPrefManager.SaveToken(loginResponse);
                                 Toast.makeText(getActivity(), "login success", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getActivity(), MainActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
+
                             }
 
                         } else {
@@ -129,7 +130,6 @@ public class Login_Tab_Fragment extends Fragment {
 
         }
     }
-
         }
 
 

@@ -72,6 +72,11 @@ public class User_info implements Serializable {
         return updated_at;
     }
 
+
+
+    public void setUpdated_at(Date updated_at) {
+        this.updated_at = updated_at;
+    }
     @Override
     public String toString() {
         return "User_info{" +
@@ -84,10 +89,5 @@ public class User_info implements Serializable {
                 ", updated_at=" + updated_at +
                 '}';
     }
-
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
-    }
-
 
 }

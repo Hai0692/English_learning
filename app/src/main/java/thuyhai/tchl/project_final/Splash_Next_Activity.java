@@ -34,8 +34,6 @@ public class Splash_Next_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2 = new Intent(v.getContext(), Login_Activity.class);
                 startActivity(intent2);
-
-
             }
         });
     }

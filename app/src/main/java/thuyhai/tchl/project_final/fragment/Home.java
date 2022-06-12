@@ -26,9 +26,12 @@ import java.util.TimerTask;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import thuyhai.tchl.project_final.Login_Activity;
+import thuyhai.tchl.project_final.MainActivity;
 import thuyhai.tchl.project_final.Question_Activity;
 import thuyhai.tchl.project_final.R;
 import thuyhai.tchl.project_final.REST_API.Retrofit_Client;
+import thuyhai.tchl.project_final.Storage.SharedPrefManager;
 import thuyhai.tchl.project_final.adapter.Level_Adapter;
 import thuyhai.tchl.project_final.adapter.Slide_Photo_Adapter;
 import thuyhai.tchl.project_final.models.Photo_Model;
@@ -47,19 +50,36 @@ public class Home extends Fragment  {
     private static RecyclerView rcvlevel;
     private  static  List<level_response> level;
     private static Level_Adapter level_adapter;
+    SharedPrefManager sharedPrefManager;
+
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
       View  mView= inflater.inflate(R.layout.home, container, false);
+
+
+
+
+
         linearLayout = mView.findViewById(R.id.linear_question);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Question_Activity.class);
-                startActivity(intent);
+                sharedPrefManager = new SharedPrefManager(getContext());
+                if(sharedPrefManager != null &&  sharedPrefManager.isLoggedIn()){
+                    Intent intent_qs = new Intent(v.getContext(), Question_Activity.class);
+                    startActivity(intent_qs);
+                }else{
+                    Intent intent_login = new Intent(v.getContext(), Login_Activity.class);
+                    startActivity(intent_login);
+                }
+
             }
         });
+
+
 
         // autoslide
         viewPager = mView.findViewById(R.id.view_Pager);
@@ -123,27 +143,17 @@ public class Home extends Fragment  {
     }
 
     public static void getDataLevel(){
-//        level_models = new ArrayList<>();
-//        level_models.add(new level_response("Basic \nLevel"));
-//        level_models.add(new level_response("Average \n Level"));
-//        level_models.add(new level_response("Basic \n Level"));
-//
-//        level_adapter = new Level_Adapter(level_models, rcvlevel.getContext());
-//        rcvlevel.setAdapter(level_adapter);
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(rcvlevel.getContext(), 3);
-//        rcvlevel.setLayoutManager(gridLayoutManager);
-
-
         Call <List<level_response>> call = Retrofit_Client.getInstance().getApi().level();
         call.enqueue(new Callback<List<level_response>>() {
             @Override
             public void onResponse(Call<List<level_response>> call, Response<List<level_response>> response) {
                 List<level_response> levelResponses = response.body();
-                if(levelResponses != null){
+                if(response.isSuccessful() && levelResponses != null){
                     for(level_response post : levelResponses){
                         level.add(post);
                     }
                     PutDataInRecyclerView(level);
+
 
                 }
 
@@ -157,7 +167,6 @@ public class Home extends Fragment  {
     }
     private static void PutDataInRecyclerView(List<level_response> level) {
         level_adapter = new Level_Adapter(level);
-
         LinearLayoutManager llm = new LinearLayoutManager(rcvlevel.getContext());
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         rcvlevel.setLayoutManager(llm);
@@ -165,5 +174,17 @@ public class Home extends Fragment  {
 
 
     }
+
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        if(sharedPrefManager != null && sharedPrefManager.isLoggedIn() ){
+//            Intent intent_qs = new Intent(getActivity(), Question_Activity.class);
+//            intent_qs.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent_qs);
+//
+//        }
+//    }
 
 }

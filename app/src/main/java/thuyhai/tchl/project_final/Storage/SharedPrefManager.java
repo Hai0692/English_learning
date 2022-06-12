@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import thuyhai.tchl.project_final.models.User_info;
+import thuyhai.tchl.project_final.models.login_response;
 
 public class SharedPrefManager {
     private SharedPreferences sharedPreferences;
@@ -25,8 +26,21 @@ public class SharedPrefManager {
         editor.putString("phone", user.getPhone());
         editor.putBoolean("logged", true);
         editor.apply();
-
     }
+    public void SaveToken(login_response res){
+        sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString("token" , res.getToken());
+        editor.putBoolean("logged", true);
+        editor.apply();
+    }
+
+
+    public login_response getToken(){
+        sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return  new login_response(sharedPreferences.getString("token", null));
+    }
+
     public boolean isLoggedIn(){
         sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getBoolean("logged",false);
@@ -38,6 +52,7 @@ public class SharedPrefManager {
                 sharedPreferences.getString("email", null),
                 sharedPreferences.getString("phone", null));
     }
+
     public void logout(){
         sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();

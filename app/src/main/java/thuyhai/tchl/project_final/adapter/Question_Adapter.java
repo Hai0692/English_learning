@@ -13,15 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import thuyhai.tchl.project_final.R;
-import thuyhai.tchl.project_final.models.Question_Model;
+import thuyhai.tchl.project_final.models.question_response;
 
 public class Question_Adapter extends RecyclerView.Adapter<Question_Adapter.Question_ViewHolder> {
-    private List<Question_Model> question_models;
+    private List<question_response> question_models;
     private Context context;
 
-    public Question_Adapter(List<Question_Model> question_models, Context context) {
+
+    public Question_Adapter(List<question_response> question_models) {
         this.question_models = question_models;
-        this.context = context;
     }
 
     @NonNull
@@ -34,10 +34,13 @@ public class Question_Adapter extends RecyclerView.Adapter<Question_Adapter.Ques
 
     @Override
     public void onBindViewHolder(@NonNull Question_ViewHolder holder, int position) {
-        Question_Model question_model =  question_models.get(position);
-        holder.tv_Name.setText(question_model.getNameModel());
-        holder.tv_Question.setText(question_model.getQuestionModel());
-        holder.imgAvatar.setImageResource(question_model.getImageModel());
+
+        final String  name_qs = question_models.get(position).getName();
+        holder.tv_Name.setText(name_qs);
+
+        final   String body_qs = question_models.get(position).getBody();
+        holder.tv_Question.setText(body_qs);
+
 
     }
 
@@ -47,11 +50,9 @@ public class Question_Adapter extends RecyclerView.Adapter<Question_Adapter.Ques
     }
 
     public class Question_ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imgAvatar;
         private TextView tv_Name, tv_Question;
         public Question_ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgAvatar = itemView.findViewById(R.id.img_avt);
             tv_Name = itemView.findViewById(R.id.tv_name);
             tv_Question = itemView.findViewById(R.id.tv_question);
         }

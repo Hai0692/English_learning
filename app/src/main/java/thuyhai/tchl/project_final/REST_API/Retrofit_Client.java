@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit_Client {
-    private static String BASE_URL = "http://192.168.1.21/App-E/public/api/";
+    private static String BASE_URL = "http://192.168.0.105/App-E/public/api/";
     private static Retrofit_Client retrofitClient;
     private static Retrofit retrofit;
     private OkHttpClient.Builder builder = new OkHttpClient.Builder();

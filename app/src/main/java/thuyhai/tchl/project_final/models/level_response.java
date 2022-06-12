@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 public class level_response implements Serializable {
     private String level;
-
     public level_response(String level) {
-        level = level;
+        this.level = level;
     }
 
     public String getLevel() {
@@ -14,13 +13,13 @@ public class level_response implements Serializable {
     }
 
     public void setLevel(String level) {
-        level = level;
+        this.level = level;
     }
 
     @Override
     public String toString() {
         return "level_response{" +
-                "Level='" + level + '\'' +
+                "level='" + level + '\'' +
                 '}';
     }
 }
